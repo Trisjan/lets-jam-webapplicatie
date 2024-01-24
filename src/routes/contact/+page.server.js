@@ -41,7 +41,6 @@ export async function load() {
     const defaultUrlBooks = urlBase + urlSearch + urlQuery + urlDefault + space + bookItems + urlKey + urlOutput;
     const defaultUrleBooks = urlBase + urlSearch + urlQuery + urlDefault + space + EbookItems + urlKey + urlOutput;
     const defaultUrlAudioBooks = urlBase + urlSearch + urlQuery + urlDefault + space + audioItems + urlKey + urlOutput;
-    const defaultUrlSearch = urlBase + urlSearch + urlQuery +"kikker"+ urlKey + urlOutput;
 
     // Fetch-requests voor het ophalen van boeken, e-books en luisterboeken 
 
@@ -65,7 +64,6 @@ export async function load() {
     const apiBooks = await responseBooks.json();
     const apiAudioBooks = await responseAudioBooks.json();
     const apiEBooks = await responseEBooks.json();
-    const apiSearch = await search.json();
 
 
         // Het retourneren van de verzamelde gegevens
@@ -75,8 +73,7 @@ export async function load() {
         hygraphData,
         apiBooks,
         apiAudioBooks,
-        apiEBooks,
-        apiSearch,
+        apiEBooks
           // andere gegevens die je wilt doorgeven aan de component
       
       };
