@@ -122,10 +122,7 @@
 
 
 <style>
-header{
-    width: 100%;
-    height: 15vh;
-}
+
 section{
     margin: 2rem auto;
     padding: 1rem;

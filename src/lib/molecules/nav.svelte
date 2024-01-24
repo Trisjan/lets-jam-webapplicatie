@@ -8,7 +8,7 @@
       </label>
     
       <nav class="menu1">
-        <a class="link1" href="/">Leeslijst</a>
+        <a class="link1" href="/leeslijst">Leeslijst</a>
         <a class="link1" href="/uitleningen">Uitleningen</a>
         <a class="link1" href="/">Uitleengeschiedenis</a>
         <a class="link1" href="/betalingen">Betalingen</a>
