@@ -3,8 +3,6 @@
     import { Search, Nav, LinkButton } from '$lib/index.js';
     // Hier export ik de data zodat ik de data vanuit hygraph kan gebruiken die ik query in de page.server
     export let data;
-
-    console.log(data.hygraphData.contacts);
 </script>
 
 <header> 

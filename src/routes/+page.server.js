@@ -55,15 +55,10 @@ export async function load() {
         defaultUrlAudioBooks
     );
 
-    const search = await fetch(
-        defaultUrlSearch
-    );
-
     // Het omzetten van de JSON-respons naar bruikbare objecten
     const apiBooks = await responseBooks.json();
     const apiAudioBooks = await responseAudioBooks.json();
     const apiEBooks = await responseEBooks.json();
-    const apiSearch = await search.json();
 
 
         // Het retourneren van de verzamelde gegevens
