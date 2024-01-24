@@ -50,10 +50,9 @@ export async function load() {
 	const apiEBooks = await responseEBooks.json();
 
 	return {
-		hygraphData,
 		apiBooks,
 		apiAudioBooks,
-		apiEBooks
-		// andere gegevens die je wilt doorgeven aan de component
+		apiEBooks,
+		hygraphData
 	};
 }

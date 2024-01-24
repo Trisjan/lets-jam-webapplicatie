@@ -1,8 +1,9 @@
 <script>
     // Hier import ik de components die nodig zijn in deze pagina
-    import { Card,  LinkButton, Logo, Search, Nav, Footer } from '$lib/index.js'
+    import { Card,  LinkButton, Logo, Search, Nav } from '$lib/index.js'
     export let data;
     const hygraphData = data.hygraphData;
+    const homepage = hygraphData.homepages;
     // Hier export ik de data zodat ik de data vanuit hygraph kan gebruiken die ik query in de page.server
 
 </script>
@@ -21,7 +22,7 @@
                 <h1>
                     Welkom <span>{hygraphData.families[0].name}</span> bij OBA!
                 </h1>
-                <p> {hygraphData.homepages[0].homepageText}</p>
+                <p> {homepage[0].homepageText}</p>
         </article>
         <article class="logo">
                 <img src="{Logo}" alt="oba logo" width="100%" >
@@ -34,8 +35,8 @@
     <section>
             <article>
                 <h2>Jouw recente leeslijst: <span>boeken<span></h2>
-                <p> {hygraphData.homepages[1].homepageText}</p>
-                <LinkButton buttonText="Bekijk Leeslijst" buttonLink="#"/>
+                <p> {homepage[1].homepageText}</p>
+                <LinkButton buttonText="Bekijk Leeslijst" buttonLink="/leeslijst"/>
             </article>
 
             <article class="carousel">
@@ -56,8 +57,8 @@
         <h2>
             Jouw recente leeslijst: <span>e-boeken<span>
             </h2>
-            <p> {hygraphData.homepages[2].homepageText}</p>
-            <LinkButton buttonText="Bekijk Leeslijst" buttonLink="#"/>
+            <p> {homepage[2].homepageText}</p>
+            <LinkButton buttonText="Bekijk Leeslijst" buttonLink="/leeslijst"/>
     </article>
 
     <article class="carousel">
@@ -80,8 +81,8 @@
 <section class="readinglist-books-section">
     <article>
         <h2> Jouw recente leeslijst: <span>luisterboeken<span></h2>
-        <p>{hygraphData.homepages[3].homepageText}</p>
-        <LinkButton buttonText="Bekijk Leeslijst" buttonLink="#"/>
+        <p>{homepage[3].homepageText}</p>
+        <LinkButton buttonText="Bekijk Leeslijst" buttonLink="/leeslijst"/>
         </article>
     <article class="carousel">
         {#each data.apiAudioBooks.results.slice(0, 5) as book}
@@ -102,7 +103,7 @@
         <h2>
         Ontdek de Wereld van Leren bij <span>OBA!</span>
         </h2>
-        <p>{hygraphData.homepages[4].homepageText}</p>
+        <p>{homepage[4].homepageText}</p>
         
   
     </article>
@@ -117,7 +118,7 @@
     </article>    
     <LinkButton buttonText="Meer bekijken" buttonLink="https://www.oba.nl/"/>
 </section>
-<Footer />
+
 
 <style>
 

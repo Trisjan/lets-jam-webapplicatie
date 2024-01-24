@@ -9,6 +9,7 @@
 
 </script>
 
+
 <a href="{bookDetailLink}">
     <article class="background-image" style="background-image: linear-gradient(transparent, rgba(0, 0, 0, 0.5)), url('{bookUrl}');">
         <!-- In de html elementen benoem ik lege js variabeles en deze geef ik leeg mee aan de pagina waar dit component wordt gebruikt -->
@@ -19,10 +20,12 @@
     </article>
 </a>
 
-<style>
+
+<style>     
     a {
         text-decoration: none;
         color: var(--primary-light-color);
+        z-index: 2;
     }
     article {
         position: relative;
@@ -43,6 +46,7 @@
         border-radius: 10px;
         box-shadow: 0 4px 6px 1px #ccc;
         background-color: linear-gradient(to top, transparent, #000000);
+        z-index: 2;
     }
 
     
@@ -62,6 +66,7 @@
         left: 0;
         bottom: 0;
         padding: .5rem;
+        z-index: 2;
     }
     .info > p {
         font-size: 0.9rem;

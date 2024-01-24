@@ -3,11 +3,16 @@
 
     console.log(data.results)
     const results = data.results
-    import { Card } from '$lib/index.js'
+    import { Card, Nav, Search} from '$lib/index.js'
     
 </script>
 
-<h1>Resultaten voor: </h1>
+<header>
+    <Nav />
+    <!-- menu  -->
+</header>
+
+<h1>Zoekresultaten: </h1>
 <main>
 <section>
     {#each results as result}
