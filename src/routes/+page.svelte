@@ -1,22 +1,19 @@
 <script>
     // Hier import ik de components die nodig zijn in deze pagina
     import { Card,  LinkButton, Logo, Search, Nav, Footer } from '$lib/index.js'
-    // Hier export ik de data zodat ik de data vanuit hygraph kan gebruiken die ik query in de page.server
     export let data;
     const hygraphData = data.hygraphData;
-    console.log(JSON.stringify(data.hygraphData.activiteitens, null, 2));
-    
-    // console.log(JSON.stringify(data.apiEBooks.results[0], null, 2))
     // Hier export ik de data zodat ik de data vanuit hygraph kan gebruiken die ik query in de page.server
 
 </script>
 
-<header> 
-     <Nav />
-     <Search 
-     cardData={data.apiBooks.results.concat(data.apiEBooks.results, data.apiAudioBooks.results)}/>
-  
+<header>
+    <Nav />
+    <Search 
+    cardData={data.apiBooks.results.concat(data.apiEBooks.results, data.apiAudioBooks.results)}/>
+    <!-- menu  -->
 </header>
+ 
 
 
 <section  class="hero-text">
@@ -205,38 +202,36 @@ span{
     width: 45%;
     padding: 5rem 0;
     }
+    
     .logo{
-        position: absolute;
-        top:0   ;
-        right: 0;
         width: 50%;
-  }
-  .about{
-    height: 93vh;
+    }
+    .about{
+      height: 93vh;
+      display: flex;
+      gap: 1.5rem;
+      flex-direction: column !important;
+      padding-bottom: 5rem;
+    }
+    .about-text{
+      text-align: center;
+      padding-bottom: 0;
+    }
+    .centerCarousel{
     display: flex;
-    gap: 1.5rem;
-    flex-direction: column !important;
-    padding-bottom: 5rem;
-  }
-  .about-text{
-    text-align: center;
-    padding-bottom: 0;
-  }
-  .centerCarousel{
-  display: flex;
-  gap: 10px;
-  width: 70vw;
-  max-width: 90%;
-  padding: 0 1rem;
-  overflow-x: scroll;
-  scroll-snap-type: x mandatory;
-  scroll-behavior: smooth;
-  animation-name: tostart;
-  }
-  .centerCarousel a{
-    text-decoration: none;
-    color: var(--primary-dark-color);
-  }
+    gap: 10px;
+    width: 70vw;
+    max-width: 90%;
+    padding: 0 1rem;
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    animation-name: tostart;
+    }
+    .centerCarousel a{
+      text-decoration: none;
+      color: var(--primary-dark-color);
+    }
 }
 
 

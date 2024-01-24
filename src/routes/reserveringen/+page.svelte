@@ -1,2 +1,42 @@
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
+<script>
+    import {ReservationCard} from '$lib/index.js';
+    export let data;
+</script>
+
+<h1>Reserveringen</h1>
+
+<section>
+{#each Array(2) as _, i}
+    {#each data.uitleengeschiedenis1 as book (book.id + i)}
+        <ReservationCard 
+            bookDetailLink="{book.detailLink}"
+            bookUrl="{book.image.url}"
+            bookTitle="{book.title}"
+            bookAuthor="{book.author}"
+            bookStatus="{book.beschikbaarheid}"
+        />
+    {/each}
+{/each}
+</section>
+
+<style>
+    h1 {
+        padding: 2rem;
+    }
+
+    section {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(15em, 1fr));
+        justify-items: center;
+    }
+
+    /* tablet breakpoint */
+@media (min-width: 40em) {
+
+    section {
+        gap: 2rem;
+        padding: 2rem;
+    }
+}
+</style>
+

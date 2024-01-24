@@ -1,14 +1,46 @@
 <script>
+    import {Card} from '$lib/index.js';
     export let data;
 </script>
 
-<ul>
-    {#each data.readingLists as book}
-        <li>
-            <h1>{book.title}</h1>
-            <h2>{book.author}</h2>
-            <img src={book.image.url} alt={book.title}>
-            <p>{book.description}</p>
-        </li>
+<h1>Leeslijst</h1>
+
+<section>
+{#each Array(2) as _, i}
+    {#each data.uitleengeschiedenis1 as book (book.id + i)}
+        <Card 
+            bookDetailLink="{book.detailLink}"
+            bookUrl="{book.image.url}"
+            bookTitle="{book.title}"
+            bookAuthor="{book.author}"
+        />
     {/each}
-</ul>
+{/each}
+</section>
+
+<style>
+    h1 {
+        padding: 2rem;
+    }
+
+    section {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(15em, 1fr));
+        justify-items: center;
+    }
+
+    a {
+        display: block;
+        margin-left: 1rem;
+    }
+
+    /* tablet breakpoint */
+@media (min-width: 40em) {
+
+    section {
+        gap: 2rem;
+        padding: 2rem;
+    }
+}
+</style>
+

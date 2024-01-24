@@ -9,6 +9,7 @@ export { default as Button } from './atoms/button.svelte';
 // Hier export je alle molecules ------------------------------------------------------------------------------------------------------------
 export { default as Search } from './molecules/search.svelte';
 export { default as Card } from './molecules/card.svelte';
+export { default as ReservationCard } from './molecules/reservationCard.svelte';
 export { default as Table } from './molecules/table.svelte';
 export { default as Nav } from './molecules/nav.svelte';
 export { default as Footer } from './molecules/footer.svelte';
