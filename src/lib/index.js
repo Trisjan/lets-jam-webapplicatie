@@ -24,3 +24,4 @@ export { default as SmallCarrousel } from './organisms/smallCarrousel.svelte';
 // Hier export je alle assets ---------------------------------------------------------------------------------------------------------------
 export { default as Logo } from './assets/oba-logo.webp';
 export { default as Searchsvg } from './assets/search.svg';
+export { default as Placeholder } from './assets/placeholder.webp';
