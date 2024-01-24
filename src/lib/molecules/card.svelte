@@ -1,10 +1,14 @@
 <script>
-    // Geeft de lege varaiabelen mee zodat deze later in de pagina een waarde toegewezen kunnen krijgen zodat dit component ook dynamisch is
+	import { assets } from "$app/paths";
+
+    // Geeft de lege variabelen mee zodat deze later in de pagina een waarde toegewezen kunnen krijgen zodat dit component ook dynamisch is
     export let bookUrl
     export let bookTitle
     export let bookAuthor
     export let bookDetailLink
+
 </script>
+
 <a href="{bookDetailLink}">
     <article class="background-image" style="background-image: linear-gradient(transparent, rgba(0, 0, 0, 0.5)), url('{bookUrl}');">
         <!-- In de html elementen benoem ik lege js variabeles en deze geef ik leeg mee aan de pagina waar dit component wordt gebruikt -->
