@@ -1,13 +1,19 @@
 <script>
-    import {ReservationCard} from '$lib/index.js';
+    import {ReservationCard, Nav, Search} from '$lib/index.js';
     export let data;
 </script>
 
+<header>
+    <Nav />
+    <Search 
+    cardData={data.apiBooks.results.concat(data.apiEBooks.results, data.apiAudioBooks.results)}/>
+    <!-- menu  -->
+</header>
 <h1>Reserveringen</h1>
 
 <section>
 {#each Array(2) as _, i}
-    {#each data.uitleengeschiedenis1 as book (book.id + i)}
+    {#each data.hygraphData.uitleengeschiedenis1 as book (book.id + i)}
         <ReservationCard 
             bookDetailLink="{book.detailLink}"
             bookUrl="{book.image.url}"
