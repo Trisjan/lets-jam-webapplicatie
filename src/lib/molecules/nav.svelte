@@ -9,11 +9,10 @@
     
       <nav class="menu1">
         <a class="link1" href="/">Leeslijst</a>
-        <a class="link1" href="/uitleninge">Uitleningen</a>
-        <a class="link1" href="/">Uitleengeschiedenis</a>
+        <a class="link1" href="/uitleningen">Uitleningen</a>
         <a class="link1" href="/betalingen">Betalingen</a>
         <a class="link1" href="/">Reserveringen</a>
-        <a class="link1" href="/">Contact</a>
+        <a class="link1" href="/contact">Contact</a>
       </nav>
   </nav>
   </section>

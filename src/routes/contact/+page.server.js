@@ -1,6 +1,6 @@
 import { gql } from 'graphql-request';
 import { hygraph } from '$lib/utils/hygraph.js';
-import { PUBLIC_API_KEY } from '$env/static/public'
+import { PUBLIC_API_KEY } from '$env/static/public';
 
 export async function load() {
 	// De openbare sleutel voor de OBA API
@@ -10,17 +10,16 @@ export async function load() {
 
 	// GraphQL-query voor het ophalen van uitleengeschiedenis
 	const query = gql`
-		query uitleengeschiedenis {
-			uitleengeschiedenis1 {
-                id
-				author
-				image {
-					url
-				}
-				title
-			}
-          
-		}
+    query contact {
+        contacts {
+            title
+            description
+            image {
+                url
+            }
+            contactMethode
+            }
+        }
 	`;
     
 
@@ -56,10 +55,6 @@ export async function load() {
         defaultUrlAudioBooks
     );
 
-    const search = await fetch(
-        defaultUrlSearch
-    );
-
     // Het omzetten van de JSON-respons naar bruikbare objecten
     const apiBooks = await responseBooks.json();
     const apiAudioBooks = await responseAudioBooks.json();
@@ -69,14 +64,14 @@ export async function load() {
         // Het retourneren van de verzamelde gegevens
 
     return {
-     
+    
         hygraphData,
         apiBooks,
         apiAudioBooks,
         apiEBooks
           // andere gegevens die je wilt doorgeven aan de component
-      
-      };
+    
+    };
 }
 
 
