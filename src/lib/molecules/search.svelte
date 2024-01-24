@@ -41,6 +41,9 @@ onMount(() => {
       cardData = filteredCards;
       error = '';
     }
+    if (searchValue.trim() === '') {
+      closeDialog();
+    }
   }
 
 </script>
@@ -48,16 +51,16 @@ onMount(() => {
   <div on:click={openDialog} class="button">
     <form action="" on:submit={submitted}>
       <input id="zoekinput" type="text" placeholder="Zoek.." name="search" bind:value autocomplete="off">
-      <button type="submit" ><img src={Searchsvg} alt="submit" width="35"></button>
+      <a href={value} ><img src={Searchsvg} alt="submit" width="35"></a>
    </form> 
   </div>
   {#if showDialog}
         <div class="model">
                 <p>Je zoekt: <span>{value}</span></p> 
-                <article>
+                <!-- <article>
                   <a href={value}>Toon meer</a>
                   <button on:click={closeDialog}>Sluiten</button>
-                  </article>
+                  </article> -->
             {#if error}
                 <h2>{error}</h2>
                 {:else}
