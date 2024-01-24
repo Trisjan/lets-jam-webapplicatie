@@ -1,24 +1,27 @@
 <script>
     // Hier import ik de components die nodig zijn in deze pagina
-    import { Card,  LinkButton, Logo, Search, Nav } from '$lib/index.js'
-    // Hier export ik de data zodat ik de data vanuit hygraph kan gebruiken die ik query in de page.server
+    import { Card,  LinkButton, Logo, Search, Nav, Footer } from '$lib/index.js'
     export let data;
+    const hygraphData = data.hygraphData;
+    // Hier export ik de data zodat ik de data vanuit hygraph kan gebruiken die ik query in de page.server
+
 </script>
 
-<header> 
-     <Nav />
-     <Search 
-     cardData={data.apiBooks.results.concat(data.apiEBooks.results, data.apiAudioBooks.results)}/>
-  
+<header>
+    <Nav />
+    <Search 
+    cardData={data.apiBooks.results.concat(data.apiEBooks.results, data.apiAudioBooks.results)}/>
+    <!-- menu  -->
 </header>
+ 
 
 
 <section  class="hero-text">
         <article>
                 <h1>
-                    Welkom <span>Mark Vos</span> bij OBA!
+                    Welkom <span>{hygraphData.families[0].name}</span> bij OBA!
                 </h1>
-                <p> Ontdek een wereld vol kennis en verhalen. Onze collectie staat tot uw beschikking, en ons team helpt u graag bij uw zoektocht naar wijsheid. Laat de pagina's uw gids zijn op een avontuurlijke reis door het geschreven woord.</p>
+                <p> {hygraphData.homepages[0].homepageText}</p>
         </article>
         <article class="logo">
                 <img src="{Logo}" alt="oba logo" width="100%" >
@@ -31,7 +34,7 @@
     <section>
             <article>
                 <h2>Jouw recente leeslijst: <span>boeken<span></h2>
-                <p> Deze boeken heb je toegevoegd aan jouw leeslijst en wil je ooit nog lezen!</p>
+                <p> {hygraphData.homepages[1].homepageText}</p>
                 <LinkButton buttonText="Bekijk Leeslijst" buttonLink="#"/>
             </article>
 
@@ -53,7 +56,7 @@
         <h2>
             Jouw recente leeslijst: <span>e-boeken<span>
             </h2>
-            <p> Deze boeken heb je toegevoegd aan jouw leeslijst en wil je ooit nog lezen via jouw telefoon of e-reader!</p>
+            <p> {hygraphData.homepages[2].homepageText}</p>
             <LinkButton buttonText="Bekijk Leeslijst" buttonLink="#"/>
     </article>
 
@@ -77,7 +80,7 @@
 <section class="readinglist-books-section">
     <article>
         <h2> Jouw recente leeslijst: <span>luisterboeken<span></h2>
-        <p> Deze boeken heb je toegevoegd aan jouw leeslijst en wil je ooit nog luisteren!</p>
+        <p>{hygraphData.homepages[3].homepageText}</p>
         <LinkButton buttonText="Bekijk Leeslijst" buttonLink="#"/>
         </article>
     <article class="carousel">
@@ -94,27 +97,27 @@
 
 </section>
 
-<section>
+<section class="about">
     <article class="about-text"> 
         <h2>
         Ontdek de Wereld van Leren bij <span>OBA!</span>
         </h2>
-        <p>
-            Bij OBA bieden we niet alleen een schat aan boeken, maar ook een wereld van kennis en leren. Ontdek onze cursussen, van talen en schoolvakken tot rijles theorie en meer. Investeer in jezelf, breid je vaardigheden uit en verrijk je leven met onze educatieve programma's. Kom langs en begin vandaag nog met leren!
-        </p>
-        <LinkButton buttonText="Meer bekijken" buttonLink="https://www.oba.nl/"/>
+        <p>{hygraphData.homepages[4].homepageText}</p>
+        
   
     </article>
-
-    <section class="about-carousel">
-        <!-- carousel plaatsen -->
-    </section>
-
+        <article class="centerCarousel">
+            {#each hygraphData.activiteitens.slice(0, 5) as activiteiten}
+            <a href="{activiteiten.activiteitLink}">
+                <img src="{activiteiten.activiteitImage.url}" alt="{activiteiten.activiteitNaam}" width="300" height="200">
+                <h3>{activiteiten.activiteitNaam}</h3>
+            </a>
+        {/each} 
     
+    </article>    
+    <LinkButton buttonText="Meer bekijken" buttonLink="https://www.oba.nl/"/>
 </section>
-
-
-
+<Footer />
 
 <style>
 header{
@@ -199,12 +202,36 @@ span{
     width: 45%;
     padding: 5rem 0;
     }
+    
     .logo{
-        position: absolute;
-        top:0   ;
-        right: 0;
         width: 50%;
-  }
+    }
+    .about{
+      height: 93vh;
+      display: flex;
+      gap: 1.5rem;
+      flex-direction: column !important;
+      padding-bottom: 5rem;
+    }
+    .about-text{
+      text-align: center;
+      padding-bottom: 0;
+    }
+    .centerCarousel{
+    display: flex;
+    gap: 10px;
+    width: 70vw;
+    max-width: 90%;
+    padding: 0 1rem;
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    animation-name: tostart;
+    }
+    .centerCarousel a{
+      text-decoration: none;
+      color: var(--primary-dark-color);
+    }
 }
 
 

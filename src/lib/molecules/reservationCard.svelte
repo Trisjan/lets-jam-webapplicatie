@@ -4,18 +4,34 @@
     export let bookTitle
     export let bookAuthor
     export let bookDetailLink
+    export let bookStatus
 </script>
+
+<section>
 <a href="{bookDetailLink}">
     <article class="background-image" style="background-image: linear-gradient(transparent, rgba(0, 0, 0, 0.5)), url('{bookUrl}');">
         <!-- In de html elementen benoem ik lege js variabeles en deze geef ik leeg mee aan de pagina waar dit component wordt gebruikt -->
-        <section class="info">
+        <div class="info">
             <p class="p__title">{bookTitle}</p>
             <p>{bookAuthor}</p>
-        </section>
+        </div>
     </article>
 </a>
 
+{#if bookStatus}
+    <span class="beschikbaar">Beschikbaar</span>
+{:else}
+    <span class="niet-beschikbaar">Niet beschikbaar</span>
+{/if}
+
+</section>
+
 <style>
+
+    section{
+        margin-bottom: 2rem;
+    }
+
     a {
         text-decoration: none;
         color: var(--primary-light-color);
@@ -73,6 +89,21 @@
     .p__title {
         font-weight: bold;
     }
+    
+    span{
+        border-radius: 1rem;
+        padding: .25rem .5rem;
+        font-weight: bold;
+        font-size: 0.9rem;
+    }
+
+    .beschikbaar{
+        background-color: rgb(84, 175, 69, .75);
+    }
+
+    .niet-beschikbaar{
+        background-color: rgba(255, 87, 30, .75);
+    }
 
 
 
@@ -86,16 +117,13 @@
         .info > p {
         font-size: 0.75rem;
         }
+
 }
 
-@media (max-width: 68em) {
+@media (min-width: 68em) { 
 
-    .info > p {
-        font-size: 0.8rem;
-    }
-
-    article {
-        width: 13rem;
-    }
+    section{
+            margin-bottom: 0;
+        }
 }
 </style>

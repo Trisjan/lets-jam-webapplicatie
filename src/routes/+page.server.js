@@ -9,24 +9,29 @@ export async function load() {
 	// const searchTerm = 'kikker';
 
 	// GraphQL-query voor het ophalen van uitleengeschiedenis
-	const query = gql`
-		query uitleengeschiedenis {
-			uitleengeschiedenis1 {
-                id
-				author
-				image {
-					url
-				}
-				title
-			}
-          
-		}
-	`;
+    const query = gql`
+    query MyQuery {
+        homepages {
+            homepageText
+        }
+        families {
+            name
+        }
+        activiteitens {
+            activiteitImage {
+              url
+            }
+            activiteitLink
+            activiteitNaam
+            activiteitBeschrijving
+          }
+    }
+`;
     
 
 	// Hygraph-request voor het ophalen van data met behulp van GraphQL-query
 	const hygraphData = await hygraph.request(query);
-
+console.log(hygraphData.activiteitens[0]);
     // URL-parameters voor het maken van zoekopdrachten naar boeken, e-books en luisterboeken
     const space = "%20";
     const bookItems = "boeken";
@@ -71,7 +76,7 @@ export async function load() {
         apiEBooks
           // andere gegevens die je wilt doorgeven aan de component
       
-      };
+      }
 }
 
 
