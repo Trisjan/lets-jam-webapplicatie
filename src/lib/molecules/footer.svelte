@@ -24,6 +24,7 @@
         flex-direction: column;
         background-color: var(--primary-dark-color);
         padding: 1rem;
+        margin-top: 2rem;
 
     }
     nav{
