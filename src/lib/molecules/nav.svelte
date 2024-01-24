@@ -1,5 +1,5 @@
 <section class="p-menu1">
-    <nav id="navbar" class="navigation" role="navigation">
+    <nav id="navbar" class="navigation">
       <input id="toggle1" type="checkbox" />
       <label class="hamburger1" for="toggle1">
         <div class="top"></div>
@@ -9,12 +9,10 @@
     
       <nav class="menu1">
         <a class="link1" href="/">Home</a>
-        <a class="link1" href="/">Leeslijst</a>
         <a class="link1" href="/leeslijst">Leeslijst</a>
         <a class="link1" href="/uitleningen">Uitleningen</a>
-        <a class="link1" href="/">Uitleengeschiedenis</a>
-        <a class="link1" href="/betalingen">Betalingen</a>
         <a class="link1" href="/reserveringen">Reserveringen</a>
+        <a class="link1" href="/betalingen">Betalingen</a>
         <a class="link1" href="/contact">Contact</a>
       </nav>
   </nav>
@@ -22,6 +20,7 @@
   
   <style>
   
+
   a {
     color: var(--primary-light-color);;
     text-decoration: none;
@@ -32,6 +31,7 @@
     left: 9%;
     width: 15vw;
     position: fixed;
+    z-index: 999;
   }
     
   /* Hamburger */
@@ -81,6 +81,12 @@
   #toggle1:checked + .hamburger1 {
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
+  backdrop-filter: blur(10px); /* Adjust the blur amount as needed */
+  -webkit-backdrop-filter: blur(10px); /* Safari support */
+
+  /* Fallback for browsers that do not support backdrop-filter */
+  background: rgba(5, 77, 157, 0.75);
+  
 }
   #toggle1:checked ~ .menu1 {
     height: auto;
@@ -90,7 +96,12 @@
   /* Menu */
   .menu1 {
     width: 100vw !important;
-    background-color: var(--primary-accent-color);
+      /* Blurry background */
+    backdrop-filter: blur(10px); /* Adjust the blur amount as needed */
+    -webkit-backdrop-filter: blur(10px); /* Safari support */
+
+    /* Fallback for browsers that do not support backdrop-filter */
+    background: rgba(5, 77, 157, 0.75);
     margin: 0;
     display: -ms-grid;
     display: grid;
@@ -106,6 +117,9 @@
     -webkit-transition: all 0.3s ease;
     transition: all 0.3s ease;
     z-index: 9;
+    border-top-right-radius: var(--primary-table-border-radius);
+    border-bottom-right-radius: var(--primary-table-border-radius);
+    border-bottom-left-radius: var(--primary-table-border-radius);
     
   }
   
@@ -122,14 +136,14 @@
     margin: 0;
     padding: 10px 0;
     font: 700 20px 'Oswald', sans-serif;
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
   }
   
   .link1:hover {
     background-color: var(--primary-light-color);
     padding: 1rem;
     color: rgb(61, 61, 61);
-    -webkit-transition: all 0.3s ease;
-    transition: all 0.3s ease;
   }
 
   @media only screen and (min-width: 43rem) {
@@ -137,7 +151,7 @@
     width: 50vw !important;
     }
     .hamburger1{
-        width: 10vw;
+        width: 5rem;
     }
 }
   </style>

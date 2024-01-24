@@ -1,10 +1,16 @@
 <script>
-    import { Table, Button } from '$lib/index.js';
+    import { Table, Button, Nav, Search } from '$lib/index.js';
     export let data;
     
-    const tellerstand = data.subscriptionCounters[0];
+    const tellerstand = data.hygraphData.subscriptionCounters[0];
 
 </script>
+
+<header>
+    <Nav />
+    <Search 
+    cardData={data.apiBooks.results.concat(data.apiEBooks.results, data.apiAudioBooks.results)}/>
+</header>
 
 <h1>Betalingen</h1>
 
@@ -17,7 +23,7 @@
         Hieronder kan je via IDEAL tegoed op je OBA-pas zetten.
     </p>
     <div>
-        <h3>Jouw tegoed: €{data.balances[0].balance}</h3>
+        <h3>Jouw tegoed: €{data.hygraphData.balances[0].balance}</h3>
         <Button buttonText="Toevoegen aan tegoed"/>
     </div>
 </section>
@@ -44,7 +50,7 @@
 <section>
 
     <h2>Betaalgeschiedenis</h2>
-    <Table tableData={data.paymentHistories }/>
+    <Table tableData={data.hygraphData.paymentHistories }/>
 
 </section>
 

@@ -35,6 +35,5 @@ export async function load() {
 		apiBooks,
 		apiAudioBooks,
 		apiEBooks
-		// andere gegevens die je wilt doorgeven aan de component
 	};
 }

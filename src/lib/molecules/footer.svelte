@@ -5,12 +5,11 @@
     <article>
         <img src="{Logo}" alt="oba logo" width="200">
         <nav>
-            <a href="/">Leeslijst</a>
-            <a  href="/uitleningen">Uitleningen</a>
-            <a  href="/">Uitleengeschiedenis</a>
-            <a  href="/betalingen">Betalingen</a>
-            <a  href="/">Reserveringen</a>
-            <a  href="/">Contact</a>
+            <a href="/">Home</a>
+            <a href="/leeslijst">Leeslijst</a>
+            <a href="/uitleningen">Uitleningen</a>
+            <a href="/reserveringen">Reserveringen</a>
+            <a href="/betalingen">Betalingen</a>
           </nav>
     </article>
     <article>
@@ -25,6 +24,7 @@
         flex-direction: column;
         background-color: var(--primary-dark-color);
         padding: 1rem;
+        margin-top: 2rem;
 
     }
     nav{
