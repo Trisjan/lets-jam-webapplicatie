@@ -1,6 +1,6 @@
 import { gql } from 'graphql-request';
 import { hygraph } from '$lib/utils/hygraph.js';
-import { PUBLIC_API_KEY } from '$env/static/public'
+import { PUBLIC_API_KEY } from '$env/static/public';
 
 export async function load() {
 	// De openbare sleutel voor de OBA API
@@ -9,29 +9,23 @@ export async function load() {
 	// const searchTerm = 'kikker';
 
 	// GraphQL-query voor het ophalen van uitleengeschiedenis
-    const query = gql`
-    query MyQuery {
-        homepages {
-            homepageText
-        }
-        families {
-            name
-        }
-        activiteitens {
-            activiteitImage {
-              url
+	const query = gql`
+    query contact {
+        contacts {
+            title
+            description
+            image {
+                url
             }
-            activiteitLink
-            activiteitNaam
-            activiteitBeschrijving
-          }
-    }
-`;
+            contactMethode
+            }
+        }
+	`;
     
 
 	// Hygraph-request voor het ophalen van data met behulp van GraphQL-query
 	const hygraphData = await hygraph.request(query);
-console.log(hygraphData.activiteitens[0]);
+
     // URL-parameters voor het maken van zoekopdrachten naar boeken, e-books en luisterboeken
     const space = "%20";
     const bookItems = "boeken";
@@ -46,6 +40,7 @@ console.log(hygraphData.activiteitens[0]);
     const defaultUrlBooks = urlBase + urlSearch + urlQuery + urlDefault + space + bookItems + urlKey + urlOutput;
     const defaultUrleBooks = urlBase + urlSearch + urlQuery + urlDefault + space + EbookItems + urlKey + urlOutput;
     const defaultUrlAudioBooks = urlBase + urlSearch + urlQuery + urlDefault + space + audioItems + urlKey + urlOutput;
+
     // Fetch-requests voor het ophalen van boeken, e-books en luisterboeken 
 
         const responseBooks = await fetch(
@@ -69,14 +64,14 @@ console.log(hygraphData.activiteitens[0]);
         // Het retourneren van de verzamelde gegevens
 
     return {
-     
+    
         hygraphData,
         apiBooks,
         apiAudioBooks,
         apiEBooks
           // andere gegevens die je wilt doorgeven aan de component
-      
-      }
+    
+    };
 }
 
 
