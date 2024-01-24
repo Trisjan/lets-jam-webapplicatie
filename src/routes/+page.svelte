@@ -214,6 +214,7 @@ span{
   .about{
     height: 93vh;
     display: flex;
+    gap: 1.5rem;
     flex-direction: column !important;
     padding-bottom: 5rem;
   }
