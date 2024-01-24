@@ -1,21 +1,11 @@
 <script>
 	import { assets } from "$app/paths";
-    // import { Placeholder } from '$lib/index.js';
 
     // Geeft de lege variabelen mee zodat deze later in de pagina een waarde toegewezen kunnen krijgen zodat dit component ook dynamisch is
     export let bookUrl
     export let bookTitle
     export let bookAuthor
     export let bookDetailLink
-
-    // Placeholder image URL
-
-    // const placeholderImageUrl = "$lib/assets/placeholder.webp";
-
-    // Check if bookUrl is empty, use placeholder image if true
-//     if (!bookUrl) {
-//     bookUrl = placeholderImageUrl;
-// }
 
 </script>
 

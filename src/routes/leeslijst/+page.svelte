@@ -8,7 +8,6 @@
     <Nav />
     <Search 
     cardData={data.apiBooks.results.concat(data.apiEBooks.results, data.apiAudioBooks.results)}/>
-    <!-- menu  -->
 </header>
 
 <h1>Leeslijst</h1>
