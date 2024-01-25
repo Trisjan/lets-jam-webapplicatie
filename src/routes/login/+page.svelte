@@ -66,7 +66,7 @@
   }
   
   input[type=submit1] {
-    width: 20%;
+    width: fit-content;
     background-color: var(--primary-dark-color);
     color: var(--primary-light-color);
     /* font-weight: bold; */
