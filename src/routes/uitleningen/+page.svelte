@@ -12,6 +12,7 @@
 
 <section>
 <h1>Uitleningen</h1>
+<h2>Nu in bezit:</h2>
 
 <SmallCarrousel cardData={data.hygraphData.uitleengeschiedenis1}/>
 </section>

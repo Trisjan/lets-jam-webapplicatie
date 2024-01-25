@@ -78,16 +78,6 @@
             transform: scale(0);
             border-radius: 0;
   }
-  #toggle1:checked + .hamburger1 {
-  border-bottom-left-radius: 0;
-  border-bottom-right-radius: 0;
-  backdrop-filter: blur(10px); /* Adjust the blur amount as needed */
-  -webkit-backdrop-filter: blur(10px); /* Safari support */
-
-  /* Fallback for browsers that do not support backdrop-filter */
-  background: rgba(5, 77, 157, 0.75);
-  
-}
   #toggle1:checked ~ .menu1 {
     height: auto;
   }
@@ -103,6 +93,7 @@
     /* Fallback for browsers that do not support backdrop-filter */
     background: rgba(5, 77, 157, 0.75);
     margin: 0;
+    margin-top: .11rem;
     display: -ms-grid;
     display: grid;
     grid-template-rows: 1fr repeat(4, 0.5fr);
@@ -117,9 +108,7 @@
     -webkit-transition: all 0.3s ease;
     transition: all 0.3s ease;
     z-index: 9;
-    border-top-right-radius: var(--primary-table-border-radius);
-    border-bottom-right-radius: var(--primary-table-border-radius);
-    border-bottom-left-radius: var(--primary-table-border-radius);
+    border-radius: var(--primary-table-border-radius);
     
   }
   

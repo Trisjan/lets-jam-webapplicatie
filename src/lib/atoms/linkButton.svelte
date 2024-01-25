@@ -10,15 +10,11 @@
         padding: 1em 2em;
         border: none;
 
-        background-color: var(--primary-dark-color);
+        background-color: var(--primary-accent-color);
         color: var(--primary-light-color);
         text-align: center;
         text-decoration: none;
-    }
-
-    .oba-button:hover {
-        background-color: var(--primary-accent-color);
-        color: var(--primary-light-color);
+        border-radius: .25rem;
     }
 
     @media (min-width: 40em) {

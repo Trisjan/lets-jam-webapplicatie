@@ -17,10 +17,10 @@
 <section>
     <h2>Tegoed</h2>
     <p>
-        Dit tegoed gebruik je met je OBA-pas. Je kunt er zowel mee lenen als printen.
+        Dit tegoed gebruik je met jouw OBA-pas. Je kunt er zowel mee lenen als printen.
     </p>
     <p>
-        Hieronder kan je via IDEAL tegoed op je OBA-pas zetten.
+        Hieronder kan je via IDEAL tegoed op jouw OBA-pas zetten.
     </p>
     <div>
         <h3>Jouw tegoed: €{data.hygraphData.balances[0].balance}</h3>
@@ -31,7 +31,7 @@
 <section>
     <h2 class="h2-abonnement">Tellerstand abonnement</h2>
     <p>
-        Hieronder vind je alles wat je dit jaar nog kan doen met je abonnement.
+        Hieronder vind je alles wat je dit jaar nog kan doen met jouw abonnement.
     </p>
     <ul>
         <li>Uitleningen boeken: {tellerstand.bookCurrent} van de {tellerstand.bookMax}</li>
@@ -60,7 +60,7 @@
         height: fit-content;
         display: flex;
         flex-direction: column;
-        padding: 0 1.5em 2.5rem 1.5rem;
+        padding: 0 0 2.5rem 4rem;
     }
 
     section > *{
@@ -72,7 +72,7 @@
     }
 
     h1{
-        padding: 1.5rem;
+        padding: 2rem 4rem;
         padding-bottom: 0;
     }
 
@@ -102,6 +102,7 @@
         display: flex;
         flex-direction: column;
         justify-content: space-between;
+        margin-top: 2rem;
     }
 
 

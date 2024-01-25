@@ -3,7 +3,6 @@
 </script>
 <footer>
     <article>
-        <img src="{Logo}" alt="oba logo" width="200">
         <nav>
             <a href="/">Home</a>
             <a href="/leeslijst">Leeslijst</a>
@@ -13,7 +12,9 @@
           </nav>
     </article>
     <article>
-        <iframe src="https://localfocuswidgets.net/63186130b1b46" height="300" width="300" style="background-color:var(--primary-light-color);"></iframe>
+        <a href="/">
+            <img src="{Logo}" alt="oba logo" width="200">
+        </a>
     </article>
 </footer>
 <style>
@@ -25,8 +26,14 @@
         background-color: var(--primary-dark-color);
         padding: 1rem;
         margin-top: 2rem;
-
     }
+    footer article{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 1rem;
+    }
+    
     nav{
         display: flex;
         flex-direction: column;
@@ -44,11 +51,7 @@
     justify-content: space-around;
     flex-direction: row;
     }
-
-    iframe{
-        width: 100%;
-        height: 100%;
-    }
+    
     }
 
 </style>

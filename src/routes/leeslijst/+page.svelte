@@ -9,53 +9,57 @@
     <Search 
     cardData={data.apiBooks.results.concat(data.apiEBooks.results, data.apiAudioBooks.results)}/>
 </header>
+<main>
+    <h1>Leeslijst</h1>
 
-<h1>Leeslijst</h1>
+    <details>
+        <summary>Boeken</summary>
+        <section>
+        {#each data.apiBooks.results as book}
+        <Card 
+            bookAuthor={book.authors}
+            bookTitle={book.titles}
+            bookUrl={book.coverimages}
+            bookDetailLink={book.detailLink}
+        />
+    {/each}
+    </section>
+    </details>
 
-
-<details open>
-    <summary>Boeken</summary>
+    <details>
+    <summary>E-books</summary>
     <section>
-    {#each data.apiBooks.results as book}
-    <Card 
-        bookAuthor={book.authors}
-        bookTitle={book.titles}
-        bookUrl={book.coverimages}
-        bookDetailLink={book.detailLink}
-    />
-{/each}
-</section>
-</details>
+        {#each data.apiEBooks.results as book}
+        <Card 
+            bookAuthor={book.authors}
+            bookTitle={book.titles}
+            bookUrl={book.coverimages}
+            bookDetailLink={book.detailLink}
+        />
+    {/each}
+    </section>
+    </details>
 
-<details>
-<summary>E-books</summary>
-<section>
-    {#each data.apiEBooks.results as book}
-    <Card 
-        bookAuthor={book.authors}
-        bookTitle={book.titles}
-        bookUrl={book.coverimages}
-        bookDetailLink={book.detailLink}
-    />
-{/each}
-</section>
-</details>
-
-<details>
-<summary>Luisterboeken</summary>
-<section>
-    {#each data.apiAudioBooks.results as book}
-    <Card 
-        bookAuthor={book.authors}
-        bookTitle={book.titles}
-        bookUrl={book.coverimages}
-        bookDetailLink={book.detailLink}
-    />
-{/each}
-</section>
-</details>
+    <details>
+    <summary>Luisterboeken</summary>
+    <section>
+        {#each data.apiAudioBooks.results as book}
+        <Card 
+            bookAuthor={book.authors}
+            bookTitle={book.titles}
+            bookUrl={book.coverimages}
+            bookDetailLink={book.detailLink}
+        />
+    {/each}
+    </section>
+    </details>
+</main>
 
 <style>
+
+    main{
+        min-height: 100vh;
+    }
     h1{
         padding: 2rem;
     }
@@ -77,11 +81,6 @@
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(15em, 1fr));
         justify-items: center;
-    }
-
-    a {
-        display: block;
-        margin-left: 1rem;
     }
 
     /* tablet breakpoint */

@@ -144,6 +144,9 @@ onMount(() => {
       margin-top: -40rem;
       padding: 0.5rem 1rem;
       border-radius: var(--primary-table-border-radius);
+      background-color: var(--primary-light-color);
+      color: var(--primary-dark-color);
+      font-weight: bold;
     }
     ul{
         padding: 1.5rem ;
@@ -172,10 +175,10 @@ onMount(() => {
 
     }
     span{
-        color: var(--primary-accent-color);
-        font-weight: 900;
+        font-weight: 700;
     }
     h2{
+      color: var(--primary-light-color);
         padding: 1.5rem ;
         text-align: center;
     }

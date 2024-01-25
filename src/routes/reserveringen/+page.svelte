@@ -9,39 +9,43 @@
     cardData={data.apiBooks.results.concat(data.apiEBooks.results, data.apiAudioBooks.results)}/>
     <!-- menu  -->
 </header>
-<h1>Reserveringen</h1>
+
 
 <section>
-{#each Array(2) as _, i}
-    {#each data.hygraphData.uitleengeschiedenis1 as book (book.id + i)}
-        <ReservationCard 
-            bookDetailLink="{book.detailLink}"
-            bookUrl="{book.image.url}"
-            bookTitle="{book.title}"
-            bookAuthor="{book.author}"
-            bookStatus="{book.beschikbaarheid}"
-        />
-    {/each}
-{/each}
+    <h1>Reserveringen</h1>
+    <div>
+        {#each Array(2) as _, i}
+            {#each data.hygraphData.uitleengeschiedenis1 as book (book.id + i)}
+                <ReservationCard 
+                    bookDetailLink="{book.detailLink}"
+                    bookUrl="{book.image.url}"
+                    bookTitle="{book.title}"
+                    bookAuthor="{book.author}"
+                    bookStatus="{book.beschikbaarheid}"
+                />
+            {/each}
+        {/each}
+    </div>
 </section>
 
 <style>
-    h1 {
-        padding: 2rem;
+    section {
+        margin: 2rem 3rem;
+        padding: 1rem;
     }
 
-    section {
+    div {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(15em, 1fr));
-        justify-items: center;
+        justify-items: center;        
     }
 
     /* tablet breakpoint */
 @media (min-width: 40em) {
 
-    section {
+    div {
         gap: 2rem;
-        padding: 2rem;
+        padding: 2rem 0;
     }
 }
 </style>
