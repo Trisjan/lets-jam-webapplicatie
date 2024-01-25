@@ -49,7 +49,7 @@
   }
 
   h1, h3 {
-      color: white;
+      color: var(--primary-light-color);
   }
 
 
@@ -68,8 +68,7 @@
   input[type=submit1] {
     width: fit-content;
     background-color: var(--primary-dark-color);
-    color: var(--primary-light-color);
-    /* font-weight: bold; */
+    color: var(--primary-light-color);  
     padding: 14px 20px;
     margin: 8px 0;
     border: none;
@@ -91,7 +90,9 @@
   }
 
   @media only screen and (max-width: 600px) {
-
+    section{
+      scale: .85;
+    }
 }
     </style>
 
