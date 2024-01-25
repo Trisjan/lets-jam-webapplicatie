@@ -31,7 +31,6 @@ export async function load() {
 
 	// Hygraph-request voor het ophalen van data met behulp van GraphQL-query
 	const hygraphData = await hygraph.request(query);
-console.log(hygraphData.activiteitens[0]);
     // URL-parameters voor het maken van zoekopdrachten naar boeken, e-books en luisterboeken
     const space = "%20";
     const bookItems = "boeken";
