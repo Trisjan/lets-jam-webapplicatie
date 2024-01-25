@@ -7,7 +7,7 @@
         <input type="text" id="lname" name="lastname" placeholder="Wachtwoord...">
   
         <input type="submit1" value="Log in">
-        <a href="/sign-up" type="submit2">Sign up</a>
+        <a href="/signup" type="submit2">Sign up</a>
       </form>
     </div>
   </section>

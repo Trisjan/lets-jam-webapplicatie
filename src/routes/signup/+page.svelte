@@ -1,7 +1,6 @@
-<body>
-    <a href="/" >Ga terug</a>
-    <h2>> Word lid</h2>
-<form>
+<section>
+  <form>
+    <h1> Word lid</h1> 
     <fieldset>
       <legend>Persoonlijke Gegevens</legend>
       <label for="Geslacht">Geslacht</label>
@@ -41,7 +40,7 @@
         <input id="Emailadres" required type="text">
         <p class="feedback">👍</p>
 
-        <label for="Emailadres">Bevestiging E-mailadre*</label>
+        <label for="Emailadres">Bevestiging E-mailadres*</label>
         <input id="Emailadres" required type="text">
         <p class="feedback">👍</p>
   
@@ -62,52 +61,28 @@
   
        </fieldset>
 
-
-    <!-- <fieldset>
-      <legend>Online</legend>
-      <label for="url">Website url</label>
-      <input id="url" type="url" placeholder required>
-      <p class="tooltip">http://</p>
-  
-      <label for="mail" >E-mail</label>
-      <input id="mail" type="email" required>  
-      <p class="feedback">👍</p>
-    </fieldset> -->
 <fieldset>
-    <a href="/" target="_blank">WORD LID</a>
+    <a href="/" >WORD LID</a>
   </fieldset>
   </form>
-</body>
+
+</section>
 
   <style>
 
-* {
-  box-sizing:border-box;
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-}
-:root {
-    --oba-light-blue: #E3E9F9;
-    --oba-red: #0064c8;
-}
-html {
-  font:100% / 250% "Monaco";
-  padding:0;
-  margin:0;
-}
-body {
-  font-size: 1em;
-  padding:2em;
-  margin:0;
-  background-color: var(--oba-light-blue);
-}
 
 
 @media only screen and (max-width: 600px) {
-  body {
-    padding: 0;
-    margin: 1em;
-    margin-top: 1em;
-  }
+
+}
+
+section{
+  min-height: 100vh;
+  margin-bottom: 2rem;
+}
+
+h1{
+  padding-left: .5rem;
 }
 
 form {
@@ -131,7 +106,7 @@ fieldset {
   padding:1em 1em 0;
   position: relative;
   background-color: var(--oba-red);
-  color: white;
+  color: var(--primary-accent-color);
   border-radius: 1em;
 }
 fieldset + fieldset {
@@ -148,9 +123,7 @@ fieldset:valid p {
   color: White;
   background:seaGreen;
 }
-/* fieldset:invalid {
-  background: rgba(255, 224, 13, .2);
-}  */
+
 fieldset:invalid p{
   display:none;
 }
@@ -161,7 +134,7 @@ legend {
   margin-bottom: 2rem;
   position: relative;
   z-index:5;
-  color: white;
+  color: var(--primary-dark-color);
 }
 
 label {
@@ -190,11 +163,7 @@ input:focus {
   outline:none;
   box-shadow:0 0 0 3px rgba(0,0,0,.25)
 }
-input:focus + p.tooltip {
-  display:block;
-  opacity:1;
-  margin-top:-1.3em;
-}
+
 input:disabled {
   border-color:#eee;
   background-color: #f9f9f9;
@@ -203,37 +172,7 @@ input::placeholder {
   color:rgba(0,0,0,.25);
   font-style:italic;
 }
-button {
-  font-size: 1.25em;
-  flex:0 0 2em;
-  transition:all .2s .2s;
-  opacity:0;
-  width:6em;
-  border-radius:.5rem;
-  background-color:seaGreen;
-  color:white;
-  outline:none;
-  border:none;
-  box-shadow:0 0 5px rgba(0,0,0,0.2)
-}
-form:valid button {
-  opacity:1
-}
-button:focus {
-  transform: scale(1.1, 1.1);
-}
-.tooltip { 
-  z-index:1;
-  color:DodgerBlue;
-  padding:.25em;
-  background:AliceBlue;
-  border: 1px solid currentColor;
-  font-style:italic;
-  transition:all .2s;
-  margin-top:-3em;
-  opacity:0;
-  padding:.25rem;
-}
+
 .feedback {
   position: absolute;
   top: -2em;
@@ -252,16 +191,14 @@ fieldset:valid .feedback {
 }
 
 a:link, a:visited {
-  background-color: var(--oba-red);
+  background-color: var(--primary-accent-color);
   border-radius: 0.5em;
-  color: white;
+  color: var(--primary-light-color);
   padding: 14px 25px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
+  font-weight: bold;
 }
 
-a:hover, a:active {
-  background-color: var(--oba-red);
-}
   </style>

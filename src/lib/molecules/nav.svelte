@@ -13,7 +13,7 @@
         <a class="link1" href="/uitleningen">Uitleningen</a>
         <a class="link1" href="/reserveringen">Reserveringen</a>
         <a class="link1" href="/betalingen">Betalingen</a>
-        <a class="link1" href="/contact">Contact</a>
+        <a class="link1" href="/login">Log uit</a>
       </nav>
   </nav>
   </section>
