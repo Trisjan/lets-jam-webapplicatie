@@ -1,7 +1,5 @@
-<body>
-  <img src="src/logo.png" alt="logo">
+  <section>
   <div>
-      <!-- <Image></Image> -->
       <h1>Welkom bij OBA!</h1>
       <h3>Log in or sign up</h3>
       <form action="/action_page.php">
@@ -12,27 +10,20 @@
         <a href="/sign-up" type="submit2">Sign up</a>
       </form>
     </div>
-  </body>
+  </section>
 
 <style>
 
-      :root {
-          --oba-blue: #0064c8;
+  section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+  }
 
-      }
-
-      img {
-         float: right;
-         margin-right: 2em;
-      }
-
-      body {
-          background-color: #E3E9F9;
-      }
-
-      h1, h3 {
-          color: white;
-      }
+  h1, h3 {
+      color: white;
+  }
 
 
   input[type=text] {
@@ -79,7 +70,7 @@
     color: white;
   }
   
-  input[type=submit2]:hover {
+  a[type=submit2]:hover {
     background-color: white;
     color: black;
   }
@@ -87,14 +78,15 @@
   div {
     text-align: center;
     border-radius: 10px;
-    background-color: var(--oba-blue);
+    background-color: var(--primary-accent-color);
     padding: 40px;
     height: 20em;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    margin-right: -50%;
-    transform: translate(-50%, -50%);
+    width: 40rem;
+    /* position: absolute; */
+    /* top: 50%;
+    left: 50%; */
+    /* margin-right: -50%; */
+    /* transform: translate(-50%, -50%); */
   }
   @media only screen and (max-width: 600px) {
   img {
