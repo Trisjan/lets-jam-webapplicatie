@@ -205,7 +205,7 @@ span{
         width: 50%;
     }
     .about{
-      height: 93vh;
+      height: 100%;
       display: flex;
       gap: 1.5rem;
       flex-direction: column !important;
