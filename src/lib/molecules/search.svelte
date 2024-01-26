@@ -51,7 +51,7 @@ onMount(() => {
 <section>
   <div on:click={openDialog} class="button">
     <form action="" on:submit={submitted}>
-      <input id="zoekinput" type="text" placeholder="Zoek.." name="search" bind:value autocomplete="off">
+      <input id="zoekinput" type="text" placeholder="Zoek.." name="search" bind:value autocomplete="off" tabindex="0"> 
       <a class="searchlink" href={value} >
         <img src={Searchsvg} alt="submit" width="40" height="35">
       </a>

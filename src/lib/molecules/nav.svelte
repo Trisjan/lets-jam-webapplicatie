@@ -1,7 +1,7 @@
 <section class="p-menu1">
     <nav id="navbar" class="navigation">
-      <input id="toggle1" type="checkbox" />
-      <label class="hamburger1" for="toggle1">
+      <input id="toggle1" type="checkbox"/>
+      <label class="hamburger1" for="toggle1" tabindex="0">
         <div class="top"></div>
         <div class="meat"></div>
         <div class="bottom"></div>
