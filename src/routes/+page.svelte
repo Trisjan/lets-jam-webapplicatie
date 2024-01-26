@@ -157,6 +157,11 @@ p{
   scroll-behavior: smooth;
   animation-name: tostart;
 }
+
+a{
+    color: var(--primary-dark-color);
+    text-decoration: none;
+}
 span{
     color: var(--primary-accent-color);
 }
