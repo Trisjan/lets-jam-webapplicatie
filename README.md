@@ -2,12 +2,15 @@
 
 ![Ontwerp zonder titel (2)](https://github.com/Trisjan/lets-jam-webapplicatie/assets/54691201/d4655bd2-12c9-4de6-85e8-ee4b3df62a78)
 
+## Inhoudsopgave
+
   * [Beschrijving](#beschrijving)
   * [Kenmerken](#kenmerken)
   * [Installatie](#installatie)
-  * [Gebruik](#gebruik)
+  * [Gebruiksinstructies en Configuratie](#gebruiksinstructiesenconfiguratie)
   * [Bronnen](#bronnen)
   * [Licentie](#licentie)
+  * [Opmerkingen over API en Abonnement](#opmerkingenoverAPIenabonnement)
 
 
 ## Inleiding
@@ -44,6 +47,46 @@ Volg deze stappen om het project lokaal te installeren:
 4. Open je browser en ga naar `http://localhost:5000` om de applicatie te bekijken.
 
 Voor gedetailleerde documentatie over SvelteKit, raadpleeg de [Svelte documentatie](https://svelte.dev/docs/introduction).
+
+## Gebruiksinstructies en Configuratie
+
+Om het project te gebruiken, moet je een `.env`-bestand toevoegen aan de hoofdmap van het project. Dit bestand bevat gevoelige informatie en wordt daarom niet gedeeld via versiebeheer. Hier zijn de vereiste variabelen en hun waarden:
+
+1. **`.env`-bestand toevoegen:**
+
+   Maak een bestand met de naam `.env` in de hoofdmap van het project en voeg de volgende variabelen toe:
+
+   ```env
+   HYGRAPH_URL="URL_VAN_HYGRAPH"
+   HYGRAPH_KEY="HYGRAPH_API_KEY"
+   PUBLIC_API_KEY="OBA_PUBLIC_API_KEY"
+   ```
+
+2. **Variabelen uitleg:**
+
+   - `HYGRAPH_URL`: De URL van Hygraph waarop het project moet worden aangesloten.
+   
+   - `HYGRAPH_KEY`: API-sleutel voor toegang tot Hygraph.
+
+   - `PUBLIC_API_KEY`: De openbare API-sleutel vereist voor toegang tot de [OBA Boeken API](https://zoeken.oba.nl/api/v1/).
+
+3. **Voorbeeld van een `.env`-bestand:**
+
+   ```env
+   HYGRAPH_URL="https://voorbeeld.hygraph.com"
+   HYGRAPH_KEY="jouw_hygraph_api_sleutel"
+   PUBLIC_API_KEY="jouw_oba_public_api_sleutel"
+   ```
+
+4. **Start de ontwikkelingsserver:**
+
+   Nadat je het `.env`-bestand hebt toegevoegd, start je de ontwikkelingsserver opnieuw:
+
+   ```bash
+   npm run dev
+   ```
+
+Met deze configuratie heb je toegang tot de vereiste services en API's om het Mijn OBA profielpagina project te gebruiken en te testen. Zorg ervoor dat je de juiste waarden hebt voor de Hygraph-URL, Hygraph-API-sleutel en de openbare OBA-API-sleutel om een succesvolle integratie te garanderen.
 
 ## Bronnen
 - [Svelte Documentation](https://svelte.dev/docs/introduction)
