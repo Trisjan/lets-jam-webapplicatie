@@ -2,6 +2,14 @@
 
 ![Ontwerp zonder titel (2)](https://github.com/Trisjan/lets-jam-webapplicatie/assets/54691201/d4655bd2-12c9-4de6-85e8-ee4b3df62a78)
 
+  * [Beschrijving](#beschrijving)
+  * [Kenmerken](#kenmerken)
+  * [Installatie](#installatie)
+  * [Gebruik](#gebruik)
+  * [Bronnen](#bronnen)
+  * [Licentie](#licentie)
+
+
 ## Inleiding
 Dit SvelteKit project is gericht op het ontwikkelen van de profielpagina voor het Mijn OBA platform, een platform waarmee gebruikers inzicht kunnen krijgen in hun uitleengeschiedenis, abonnementsvorm, openstaande boetes, en gepersonaliseerde suggesties voor boeken en activiteiten. Het project maakt gebruik van de Hygraph bibliotheek en integreert de [OBA Boeken API](https://zoeken.oba.nl/api/v1/) om relevante gegevens op te halen.
 
